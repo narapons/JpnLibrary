@@ -3,10 +3,11 @@
 use Jpnlibrary\JpnLibrary;<br />
 //use文<br /><br />
 
-JpnLibrary::getInstance()->getJpnName(ID,META);<br />
+JpnLibrary::getInstance()->getJpnName($ID);<br />
 //指定したIDのアイテム名を日本語で返します<br /><br />
 
-JpnLibrary::getInstance()->getJpnName(17,0);<br />
+$ID = "17:0";
+JpnLibrary::getInstance()->getJpnName($ID);<br />
 //例　17:0のアイテム名を日本語で返す<br /><br /><br />
 
 
@@ -15,7 +16,8 @@ JpnLibrary::getInstance()->getJpnName(17,0);<br />
 
 ※すべてのアイテムには対応していません<br />
 アイテム名を追加、変更したい場合は当プラグインのConfig.ymlを編集してください<br />
-（クリエイティブモードのインベントリのアイテム順に記入されてます)<br /><br />
+（クリエイティブモードのインベントリのアイテム順に記入されてます）<br />
+（未登録に記入されたメッセージが未対応のアイテムIDが指定された際に返されます）<br /><br />
 
 ※PocketMine-MP 3.11.6 クリエイティブモードのインベントリで確認できるアイテムに対応しています<br />
 なお、下記のアイテムは未対応です<br />
