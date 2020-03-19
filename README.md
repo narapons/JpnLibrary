@@ -6,7 +6,7 @@ use Jpnlibrary\JpnLibrary;<br />
 JpnLibrary::getInstance()->getJpnName($ID);<br />
 //指定したIDのアイテム名を日本語で返します<br /><br />
 
-$ID = "17:0";
+$ID = "17:0";<br />
 JpnLibrary::getInstance()->getJpnName($ID);<br />
 //例　17:0のアイテム名を日本語で返す<br /><br /><br />
 
