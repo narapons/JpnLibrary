@@ -11,6 +11,7 @@ class JpnLibrary extends PluginBase implements Listener{
   public function onEnable(){
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     $this->Config = new Config($this->getDataFolder() ."Config.yml", Config::YAML, array(
+       "未登録" => "不明",
        "id:meta" => "名前",
        "5:0" => "樫の木材",
        "5:1" => "トウヒの木材",
@@ -586,8 +587,14 @@ class JpnLibrary extends PluginBase implements Listener{
 	self::$instance = $this;
   }
 
-  public function getJpnName($id,$meta){
-      return $this->Config->get("{$id}:{$meta}");
+  public function getJpnName($id){
+
+    if($this->Config->exists($id)){
+      return $this->Config->get($id);
+     }else{
+      return $this->Config->get("未登録");
+	 }
+
   }
   
 }
